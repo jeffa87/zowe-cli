@@ -11,16 +11,16 @@
 
 import { ICommandDefinition } from "@zowe/imperative";
 
-export const FileDefinition: ICommandDefinition = {
-    name: "file",
-    aliases: ["f"],
+export const UssFileDefinition: ICommandDefinition = {
+    name: "uss-file",
+    aliases: ["uss"],
     description: "View a z/OS USS file",
-    handler: __dirname + "/File.handler",
+    handler: __dirname + "/UssFile.handler",
     type: "command",
     positionals: [
         {
-            name: "file",
-            description: "Specify the file name to view",
+            name: "ussFile",
+            description: "Specify the uss file name to view",
             type: "string",
             required: true
         }

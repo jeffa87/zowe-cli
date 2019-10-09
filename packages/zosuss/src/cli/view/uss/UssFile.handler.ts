@@ -37,7 +37,7 @@ export default class Handler extends SshBaseHandler {
             iconvCmd = "|iconv -f " + commandParameters.arguments.iconvFrom + " -t " + commandParameters.arguments.iconvTo;
         }
 
-        const command = cmd + commandParameters.arguments.file + iconvCmd;
+        const command = cmd + commandParameters.arguments.ussFile + iconvCmd;
 
         if (commandParameters.arguments.cwd) {
             rc = await Shell.executeSshCwd(this.mSession, command, commandParameters.arguments.cwd,

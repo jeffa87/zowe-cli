@@ -10,7 +10,8 @@
 */
 
 import { ICommandDefinition } from "@zowe/imperative";
-import { FileDefinition } from "./file/File.definition";
+import { DataSetFileDefinition } from "./ds/DataSet.definition";
+import { UssFileDefinition } from "./uss/UssFile.definition";
 
 /**
  * Definition for the "issue" group of commands under the Shell plugin
@@ -18,7 +19,10 @@ import { FileDefinition } from "./file/File.definition";
 export const ViewCommand: ICommandDefinition = {
     name: "view", aliases: ["vw"],
     summary: "View a file",
-    description: "View a z/OS USS file",
+    description: "View a z/OS USS file or Dataset",
     type: "group",
-    children: [FileDefinition],
+    children: [
+        DataSetFileDefinition,
+        UssFileDefinition
+    ],
 };
